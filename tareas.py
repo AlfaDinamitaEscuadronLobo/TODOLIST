@@ -48,6 +48,55 @@ def interfaz2():
 
     Frame21=Frame(ventana2,width=1500,height=900)
     Frame21.config(bg="#e0d8c3")
+    
+    #---------------IMAGEN------------
+    imga2=PhotoImage(file="icono2.png")
+    labelima2=Label(Frame21,image=imga2,bg="#e0d8c3")
+    
+
+    #---------------LABEEL------------
+    label21=Label(Frame21,text="INICIAR SESION",bg="#e0d8c3",font=("Monofonto",35),fg="black")
+
+    labelusua=Label(Frame21,text="Usuario",bg="#e0d8c3",font=("Monofonto",28),fg="black")
+    labelcontraseña=Label(Frame21,text="Contraseña",bg="#e0d8c3",font=("Monofonto",28),fg="black")
+
+
+    #segundo global
+    global noom_usu_ingre
+    global password_usu_ingre
+    
+    #GLOBAL
+    global nom_user
+    global password_usu
+    #StringVAR
+    nom_user=StringVar()
+    password_usu=StringVar()
+#
+# ---LABEL usuario
+    iconuser=PhotoImage(file="iconologin2.png")
+    labelicon=Label(Frame21,image=iconuser,bg="#e0d8c3")
+    Frame(ventana2,width=300,height=3,bg="black").place(x=110,y=690)
+
+ # ---LABEL CONTRASEÑA
+    iconcon=PhotoImage(file="iconcontra.png")
+    labelicontr=Label(Frame21,image=iconcon,bg="#e0d8c3")
+
+    Frame(ventana2,width=300,height=3,bg="black").place(x=110,y=790)
+
+
+    labelicon.place(x=60,y=655)
+    labelicontr.place(x=60,y=755)
+
+
+
+
+#---------------UBICACION------------
+    labelima2.place(x=40,y=90)
+    label21.place(x=130,y=530)
+    labelusua.place(x=60,y=600)
+    labelcontraseña.place(x=60,y=700)
+
+
     Frame21.pack()
 
 
