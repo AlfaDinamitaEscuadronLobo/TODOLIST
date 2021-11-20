@@ -71,40 +71,133 @@ def interfaz2():
     #StringVAR
     nom_user=StringVar()
     password_usu=StringVar()
-#
-# ---LABEL usuario
+
+    #---------------ENTRY------------
+    noom_usu_ingre=Entry(ventana2,border=0,textvariable=nom_user,fg="black",font=("Source Code Pro",20),bg="#e0d8c3")
+    password_usu_ingre=Entry(ventana2,border=0,textvariable=password_usu,fg="black",font=("Source Code Pro",20),bg="#e0d8c3",show="*")
+
+    #---------------ENTRY LABEL------------
+    noom_usu_ingre.place(x=130,y=585,width=280,height=30)
+    password_usu_ingre.place(x=130,y=690,width=280,height=30)
+    #
+    # ---LABEL usuario
     iconuser=PhotoImage(file="iconologin2.png")
     labelicon=Label(Frame21,image=iconuser,bg="#e0d8c3")
-    Frame(ventana2,width=300,height=3,bg="black").place(x=110,y=690)
-
- # ---LABEL CONTRASEÑA
+    # ---LABEL CONTRASEÑA
     iconcon=PhotoImage(file="iconcontra.png")
     labelicontr=Label(Frame21,image=iconcon,bg="#e0d8c3")
 
-    Frame(ventana2,width=300,height=3,bg="black").place(x=110,y=790)
+    Frame(ventana2,width=360,height=3,bg="black").place(x=130,y=718)
+    Frame(ventana2,width=360,height=3,bg="black").place(x=130,y=618)
 
+    # ---LABEL ICONO
 
-    labelicon.place(x=60,y=655)
-    labelicontr.place(x=60,y=755)
+    labelicon.place(x=80,y=585)
+    labelicontr.place(x=80,y=685)
 
-
-
-
-#---------------UBICACION------------
-    labelima2.place(x=40,y=90)
-    label21.place(x=130,y=530)
-    labelusua.place(x=60,y=600)
-    labelcontraseña.place(x=60,y=700)
+    #---------LABEL------------
+    labelima2.place(x=40,y=50)
+    label21.place(x=130,y=470)
+    labelusua.place(x=80,y=530)
+    labelcontraseña.place(x=80,y=630)
 
 
     Frame21.pack()
 
+    img3boton=PhotoImage(file="acceder.png")
+    labelboac=Label(image=img3boton)
+
+    botacc=Button(ventana2,image=img3boton,bg="#e0d8c3",borderwidth=0,width=290,height=90,command=interfaz1).place(x=140,y=740)
+    #---------------BOTON REGISTRASE------------
+
+    mybuttonregi=Button(ventana2,text="Registrarse",bg="#e0d8c3",fg="black",borderwidth=0,font=("Source Code Pro",15),activebackground="#e0d8c3",command=interfaz3Regi)
+    mybuttonregi.place(x=210,y=830)
+
+    
 
 
 
 
     ventana2.mainloop()
 
+  #----------------------------TERCERA INTERFAZ DE REGISTROO----------------------------------
+def interfaz3Regi():
+    
+    ventana2.destroy() #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    global ventana3
+    ventana3=Toplevel()
+    ventana3.geometry("600x900")
+    ventana3.resizable(0,0)
+    frame3re=Frame(ventana3,width=1500,height=900,bg="#e0d8c3")
+    frame3re.pack()
+    
+    lare=Label(frame3re,text="REGISTRARSE",bg="#e0d8c3",font=("Monofonto",35),fg="black")
+    lare.place(x=180,y=60)
+    global nombre
+    global apellido
+    global Correo
+    global Nuusuario
+    global nuevacontraseña
+    global repitacontra
+
+    #---------------------Stringvar
+    nombre=StringVar()
+    apellido=StringVar()
+    Correo=StringVar()
+    Nuusuario=StringVar()
+    nuevacontraseña=StringVar()
+  
+
+    
+    #LABEL
+    lanomb=Label(frame3re,text="Nombres",bg="#e0d8c3",font=("Monofonto",20),fg="black")
+    laape=Label(frame3re,text="Apellidos",bg="#e0d8c3",font=("Monofonto",20),fg="black")
+    lacorreo=Label(frame3re,text="Correo",bg="#e0d8c3",font=("Monofonto",20),fg="black")
+    lanuusu=Label(frame3re,text="Nuevo Usuario",bg="#e0d8c3",font=("Monofonto",20),fg="black")
+    lnuevocontr=Label(frame3re,text="Contraseña",bg="#e0d8c3",font=("Monofonto",20),fg="black")
+    
+    
+
+    #---------------------ENTRYS
+    nombre=Entry(ventana3,width=25,bg="#e0d8c3",border=0,textvariable=nombre,fg="black",font=("Source Code Pro",15))
+    apellido=Entry(ventana3,width=25,bg="#e0d8c3",border=0,textvariable=apellido,fg="black",font=("Source Code Pro",15))
+    Correo=Entry(ventana3,width=25,bg="#e0d8c3",border=0,textvariable=Correo,fg="black",font=("Source Code Pro",15))
+    Nuusuario=Entry(ventana3,width=25,bg="#e0d8c3",border=0,textvariable=Nuusuario,fg="black",font=("Source Code Pro",15))
+    nuevacontraseña=Entry(ventana3,width=25,bg="#e0d8c3",border=0,textvariable=nuevacontraseña,fg="black",font=("Source Code Pro",15),show="*")
+    
+    
+    #---------------------PLACE LABEL
+    lanomb.place(x=90,y=280)
+    laape.place(x=90,y=370)
+    lacorreo.place(x=90,y=460)
+    lanuusu.place(x=90,y=550)
+    lnuevocontr.place(x=90,y=640)
+    
+    
+    #---------------------PLACE entry
+    nombre.place(x=90,y=320)
+    apellido.place(x=90,y=410)
+    Correo.place(x=90,y=500)
+    Nuusuario.place(x=90,y=590)
+    nuevacontraseña.place(x=90,y=680)
+    
+
+    #---------------------FRAMES
+    Frame(ventana3, width=350, height=3,bg="black").place(x=90,y=350)
+    Frame(ventana3, width=350, height=3,bg="black").place(x=90,y=440)
+    Frame(ventana3, width=350, height=3,bg="black").place(x=90,y=530)
+    Frame(ventana3, width=350, height=3,bg="black").place(x=90,y=620)
+    Frame(ventana3, width=350, height=3,bg="black").place(x=90,y=710)
+    
+
+    crearcuenta=PhotoImage(file="registrarse.png")
+    
+    mybuttoncrearcuen=Button(ventana3,image=crearcuenta,bg="#e0d8c3",borderwidth=0,width=290,height=90)
+    mybuttoncrearcuen.place(x=140,y=740)
+
+    regresar=Button(ventana3,text="Regresar",bg="#e0d8c3",fg="black",borderwidth=0,font=("Source Code Pro",15),activebackground='#e0d8c3',command=interfaz2).place(x=210,y=830,height=32)
+    
+    ventana3.mainloop()
 
 #-----BOTON COMENZAR
 img2=PhotoImage(file="comenzar.png")
