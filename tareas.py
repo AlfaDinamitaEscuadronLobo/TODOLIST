@@ -127,8 +127,11 @@ def interfaz3Regi():
     frame3re=Frame(ventana3,width=1500,height=900,bg="#e0d8c3")
     frame3re.pack()
     
-    lare=Label(frame3re,text="REGISTRARSE",bg="#e0d8c3",font=("Monofonto",35),fg="black")
-    lare.place(x=180,y=60)
+    interregis=PhotoImage(file="loginregistro.png")
+    i2logo=Label(frame3re,image=interregis,bg="#e0d8c3")
+    i2logo.place(x=170,y=10)
+
+    
     global nombre
     global apellido
     global Correo
@@ -203,8 +206,8 @@ def interfaz3Regi():
     icononombre.place(x=90,y=320)
     iconapellido.place(x=90,y=410)
     iconocorreo.place(x=90,y=500)
-    iconousuario2.place(x=90,y=590)
-    icono2PASWOORD.place(x=90,y=680)
+    iconousuario2.place(x=90,y=585)
+    icono2PASWOORD.place(x=90,y=675)
 
 
 
@@ -215,7 +218,7 @@ def interfaz3Regi():
     mybuttoncrearcuen=Button(ventana3,image=crearcuenta,bg="#e0d8c3",borderwidth=0,width=290,height=90,command=insertar_datos)
     mybuttoncrearcuen.place(x=140,y=740)
 
-    regresar=Button(ventana3,text="Regresar",bg="#e0d8c3",fg="black",borderwidth=0,font=("Source Code Pro",15),activebackground='#e0d8c3',command=interfaz2).place(x=210,y=830,height=32)
+    regresar=Button(ventana3,text="Regresar",bg="#e0d8c3",fg="black",borderwidth=0,font=("Source Code Pro",15),activebackground='#e0d8c3',command=interfaz2).place(x=230,y=830,height=32)
     
     ventana3.mainloop()
 
