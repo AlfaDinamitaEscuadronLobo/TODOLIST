@@ -1,3 +1,4 @@
+
 from tkinter import *
 from tkinter import messagebox
 from tkinter import font
@@ -263,9 +264,6 @@ def inicio():
 
 
 
-
-
-
 def interfaztareas():
     global ventana4 
     ventana4=Toplevel()
@@ -283,37 +281,53 @@ def interfaztareas():
 
     imgageperfil=PhotoImage(file="perfil.png")
     lblimageper=Label(ventana4,image=imgageperfil,bg="#e0d8c3")
+    
+    
+    
+            
 
     #---------------------------creando las tareas
-    cuadro_tarea=tkinter.Listbox(ventana4,height=35,width=90)
-    cuadro_tarea.place(x=600,y=280)
-
-    agregar_tarea=tkinter.Entry(ventana4,width=50)
-    agregar_tarea.place(x=140,y=250)
-
-    Button_add_task=tkinter.Button(ventana4,text="agragar tarea",width=40)
-    Button_add_task.place(x=140,y=300)
-    #---------------------------creando las tareas
-
+    #def aadir_tarea():
+     #   tarea=agregar_tarea.get()
+      #  cuadro_tarea.insert(tkinter,END,tarea)
+ 
+    
     #-------Label Frames
     frame41.place(x=0,y=0)
     #frame42.place(x=150,y=30)
     label41.place(x=140,y=80)
     label42.place(x=140,y=130)
     lblimageper.place(x=580,y=5)
+    #---------------------------creando las tareas
+    cuadro_tarea=Listbox(ventana4,height=35,width=90)
+    cuadro_tarea.insert(0,"Lista de Tareas")
+    cuadro_tarea.place(x=600,y=280)
+    
+    
+    global entradatexto
+    entradatexto=StringVar()
+    def agrega():
+        cuadro_tarea.insert(END,entradatexto.get())
 
+    agregar_tarea=Entry(ventana4,width=50,textvariable=entradatexto)
+    agregar_tarea.place(x=140,y=250)
 
+    Buttonagregar=Button(ventana4,text="agregar tarea",width=40,command=agrega)
+    Buttonagregar.place(x=140,y=300)
 
 
     
 
+    #def add():
+     #   content = Text.get(1.0, END)
+      #  cuadro_tarea.insert(END, content)
+       # with open('data.txt','w') as file:
+        #    file.write(content)
+         #   file.seek(0)
+          #  file.close()
+           # Text.delete(1.0, END)
+
     ventana4.mainloop()
-
-#def add_task():
- #   task=entry_tasks.get()
-  #  Listbox_tasks,insert(tkinter.END,task)
-
-
 
 
 
