@@ -103,7 +103,7 @@ def interfaz2():
     img3boton=PhotoImage(file="acceder.png")
     labelboac=Label(image=img3boton)
 
-    botacc=Button(ventana2,image=img3boton,bg="#e0d8c3",borderwidth=0,width=290,height=90,command=interfaz1).place(x=140,y=740)
+    botacc=Button(ventana2,image=img3boton,bg="#e0d8c3",borderwidth=0,width=290,height=90,command=inicio).place(x=140,y=740)
     #---------------BOTON REGISTRASE------------
 
     mybuttonregi=Button(ventana2,text="Registrarse",bg="#e0d8c3",fg="black",borderwidth=0,font=("Source Code Pro",15),activebackground="#e0d8c3",command=interfaz3Regi)
@@ -137,7 +137,7 @@ def interfaz3Regi():
     global Correo
     global Nuusuario
     global nuevacontraseña
-    global repitacontra
+    
 
     #---------------------Stringvar
     nombre=StringVar()
@@ -229,7 +229,7 @@ def insertar_datos():
         host="localhost",
         user="root",
         passwd="geidar",
-        db="pytangui"
+        db="USARIOSLIST"
     )
     cursor=bd.cursor()
     sql="INSERT INTO registrar(Nombres,Apellidos,Correo,Nuevo_Usuario, Contraseña) VALUES('{0}','{1}','{2}','{3}','{4}')".format(nombre.get(),apellido.get(),Correo.get(),Nuusuario.get(),nuevacontraseña.get())
@@ -249,16 +249,29 @@ def inicio():
         passwd="geidar",
         db="USARIOSLIST"
     )
+    
     fcursor=bd.cursor()
     fcursor.execute("select Contraseña from registrar where Nuevo_Usuario='"+noom_usu_ingre.get()+"' and Contraseña='"+password_usu_ingre.get()+"'")
     if fcursor.fetchall():
         messagebox.showinfo(title="Inicio de Sesion correcto",message="Usted Ingreso Correctamente")
-        #interfazquese dirigira()
+        interfaztareas()
         
     else:
          messagebox.showinfo(title="Inicio de Sesion Incorrecto",message="Inicio de Sesion Incorrecto")
     bd.close()
 
+
+
+
+
+
+def interfaztareas():
+    global ventana4 
+    ventana4=Toplevel()
+    ventana4.geometry("600x900")
+    ventana4.resizable(0,0)
+
+    ventana4.mainloop()
 
 
 
