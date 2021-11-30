@@ -268,8 +268,17 @@ def inicio():
 def interfaztareas():
     global ventana4 
     ventana4=Toplevel()
-    ventana4.geometry("600x900")
+    ventana4.geometry("1200x900")
     ventana4.resizable(0,0)
+    
+    #---------FRAMES
+    frame41=Frame(ventana4,width=100,height=900,bg='black')
+
+    frame42=Frame(ventana4,width=1100,height=900,bg="#e0d8c3")
+    #-------Label Frames
+    frame41.place(x=0,y=0)
+    frame42.place(x=100,y=0)
+    
 
     ventana4.mainloop()
 
