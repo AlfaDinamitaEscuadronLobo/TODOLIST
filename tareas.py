@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import font
+import tkinter
 #from tkinter import font
 
 
@@ -283,6 +284,16 @@ def interfaztareas():
     imgageperfil=PhotoImage(file="perfil.png")
     lblimageper=Label(ventana4,image=imgageperfil,bg="#e0d8c3")
 
+    #---------------------------creando las tareas
+    Listbox_task=tkinter.Listbox(ventana4,height=10,width=10)
+    Listbox_task.pack()
+
+    entry_task=tkinter.Entry(ventana4,width=50)
+    entry_task.pack()
+
+    Button_add_task=tkinter.Button(ventana4,text="agragar tarea",width=40)
+    Button_add_task.pack()
+
     #-------Label Frames
     frame41.place(x=0,y=0)
     #frame42.place(x=150,y=30)
@@ -293,6 +304,11 @@ def interfaztareas():
     
 
     ventana4.mainloop()
+
+#def add_task():
+ #   task=entry_tasks.get()
+  #  Listbox_tasks,insert(tkinter.END,task)
+
 
 
 
