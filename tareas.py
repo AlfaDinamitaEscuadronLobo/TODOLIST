@@ -285,14 +285,15 @@ def interfaztareas():
     lblimageper=Label(ventana4,image=imgageperfil,bg="#e0d8c3")
 
     #---------------------------creando las tareas
-    Listbox_task=tkinter.Listbox(ventana4,height=10,width=10)
-    Listbox_task.pack()
+    cuadro_tarea=tkinter.Listbox(ventana4,height=35,width=90)
+    cuadro_tarea.place(x=600,y=280)
 
-    entry_task=tkinter.Entry(ventana4,width=50)
-    entry_task.pack()
+    agregar_tarea=tkinter.Entry(ventana4,width=50)
+    agregar_tarea.place(x=140,y=250)
 
     Button_add_task=tkinter.Button(ventana4,text="agragar tarea",width=40)
-    Button_add_task.pack()
+    Button_add_task.place(x=140,y=300)
+    #---------------------------creando las tareas
 
     #-------Label Frames
     frame41.place(x=0,y=0)
@@ -300,6 +301,9 @@ def interfaztareas():
     label41.place(x=140,y=80)
     label42.place(x=140,y=130)
     lblimageper.place(x=580,y=5)
+
+
+
 
     
 
