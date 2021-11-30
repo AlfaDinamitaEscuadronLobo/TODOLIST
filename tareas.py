@@ -270,14 +270,26 @@ def interfaztareas():
     ventana4=Toplevel()
     ventana4.geometry("1200x900")
     ventana4.resizable(0,0)
+    ventana4.config(bg="#e0d8c3")
     
     #---------FRAMES
     frame41=Frame(ventana4,width=100,height=900,bg='black')
 
-    frame42=Frame(ventana4,width=1100,height=900,bg="#e0d8c3")
+    #frame42=Frame(ventana4,width=400,height=300,bg="#3d5653")
+
+    label41=Label(ventana4,text="Bienvendio.. Geidar",bg="#e0d8c3",fg="black",font=("Monofonto",30))
+    label42=Label(ventana4,text="Es bueno verte de nuevo.",bg="#e0d8c3",fg="black",font=("Source Code Pro",18))
+
+    imgageperfil=PhotoImage(file="perfil.png")
+    lblimageper=Label(ventana4,image=imgageperfil,bg="#e0d8c3")
+
     #-------Label Frames
     frame41.place(x=0,y=0)
-    frame42.place(x=100,y=0)
+    #frame42.place(x=150,y=30)
+    label41.place(x=140,y=80)
+    label42.place(x=140,y=130)
+    lblimageper.place(x=580,y=5)
+
     
 
     ventana4.mainloop()
