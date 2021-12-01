@@ -316,9 +316,6 @@ def interfaztareas():
     Buttonagregar=Button(ventana4,text="agregar tarea",width=40,command=agrega)
     Buttonagregar.place(x=140,y=300)
 
-
-    
-
     #def add():
      #   content = Text.get(1.0, END)
       #  cuadro_tarea.insert(END, content)
