@@ -306,6 +306,7 @@ def interfaztareas():
     
     global entradatexto
     entradatexto=StringVar()
+
     def agrega():
         cuadro_tarea.insert(END,entradatexto.get())
 
@@ -322,7 +323,7 @@ def interfaztareas():
      #   content = Text.get(1.0, END)
       #  cuadro_tarea.insert(END, content)
        # with open('data.txt','w') as file:
-        #    file.write(content)
+        #    file.write(content)  
          #   file.seek(0)
           #  file.close()
            # Text.delete(1.0, END)
