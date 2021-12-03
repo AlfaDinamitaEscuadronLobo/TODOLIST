@@ -297,9 +297,9 @@ def interfaztareas():
     #frame42.place(x=150,y=30)
     label41.place(x=140,y=80)
     label42.place(x=140,y=130)
-    lblimageper.place(x=580,y=5)
+    lblimageper.place(x=700,y=5)
     #---------------------------creando las tareas
-    cuadro_tarea=Listbox(ventana4,height=35,width=90)
+    cuadro_tarea=Listbox(ventana4,height=18,width=40,fg="#fc6160",font=("Source Code Pro",18),bg="#2a2a32")
     cuadro_tarea.insert(0,"Lista de Tareas")
     cuadro_tarea.place(x=600,y=280)
     
@@ -313,12 +313,16 @@ def interfaztareas():
 
         
 
-    agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="green",font=("Source Code Pro",18),bg="#e0d8c3")
+    agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="black",font=("Source Code Pro",18),bg="#e0d8c3",border=0)
     agregar_tarea.place(x=140,y=250,height=30,width=400)
 
-    Frame(ventana4,width=350,height=3,bg="black").place(x=150,y=260)
+    Frame(ventana4,width=400,height=4,bg="#2a2a32").place(x=140,y=280)
 
-    Buttonagregar=Button(ventana4,text="agregar tarea",width=40,command=agrega)
+    imgtarea=PhotoImage(file="agretarea.png")
+    labeltare01=Label(ventana4,image=imgtarea,bg="#e0d8c3")
+
+
+    Buttonagregar=Button(ventana4,image=imgtarea,bg="#e0d8c3",borderwidth=0,height=90,width=390,command=agrega)
     Buttonagregar.place(x=140,y=300)
 
     #def add():
