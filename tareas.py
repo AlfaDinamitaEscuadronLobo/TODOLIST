@@ -309,21 +309,32 @@ def interfaztareas():
 
     def agrega():
         cuadro_tarea.insert(END,entradatexto.get())
-        
+    
+    def eliminar():
+        position=cuadro_tarea.curselection()[0]
+        cuadro_tarea.delete(position)
 
         
 
     agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="black",font=("Source Code Pro",18),bg="#e0d8c3",border=0)
     agregar_tarea.place(x=140,y=250,height=30,width=400)
 
+    
     Frame(ventana4,width=400,height=4,bg="#2a2a32").place(x=140,y=280)
 
     imgtarea=PhotoImage(file="agretarea.png")
-    labeltare01=Label(ventana4,image=imgtarea,bg="#e0d8c3")
+    #labeltare01=Label(ventana4,image=imgtarea,bg="#e0d8c3")
+
+    imgeliminar=PhotoImage(file="Eliminar.png")
+
 
 
     Buttonagregar=Button(ventana4,image=imgtarea,bg="#e0d8c3",borderwidth=0,height=90,width=390,command=agrega)
     Buttonagregar.place(x=140,y=300)
+
+    Buttoneliminar=Button(ventana4,image=imgeliminar,bg="#e0d8c3",borderwidth=0,height=90,width=390,command=eliminar)
+    Buttoneliminar.place(x=140,y=380)
+
 
     #def add():
      #   content = Text.get(1.0, END)
