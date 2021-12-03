@@ -276,19 +276,24 @@ def interfaztareas():
 
     label41=Label(ventana4,text="Bienvendio.. Geidar",bg="#e0d8c3",fg="black",font=("Monofonto",30))
     label42=Label(ventana4,text="Es bueno verte de nuevo.",bg="#e0d8c3",fg="black",font=("Source Code Pro",18))
+    label43=Label(ventana4,text="   Digite su Tarea",bg="#e0d8c3",fg="black",font=("Monofonto",28),)
+    label44=Label(ventana4,text="     Plasma tus ideas",bg="#e0d8c3",fg="black",font=("Source Code Pro",18))
 
     imgageperfil=PhotoImage(file="perfil.png")
     lblimageper=Label(ventana4,image=imgageperfil,bg="#e0d8c3")
     
     #------------------------PLACE Label Frames
     frame41.place(x=0,y=0)
-    label41.place(x=140,y=80)
-    label42.place(x=140,y=130)
-    lblimageper.place(x=700,y=5)
+    label41.place(x=140,y=300)
+    label42.place(x=140,y=350)
+    label43.place(x=140,y=440)
+    label44.place(x=140,y=490)
+    lblimageper.place(x=170,y=5)
     #---------------------------CUADRO
-    cuadro_tarea=Listbox(ventana4,height=18,width=40,fg="#fc6160",font=("Source Code Pro",18),bg="#2a2a32")
-    cuadro_tarea.insert(0,"Lista de Tareas")
-    cuadro_tarea.place(x=600,y=280)
+    cuadro_tarea=Listbox(ventana4,height=27,width=40,fg="#fc6160",font=("Source Code Pro",18),bg="#2a2a32")
+    cuadro_tarea.insert(0,"           Lista de Tareas")
+    cuadro_tarea.insert(0,"")
+    cuadro_tarea.place(x=600,y=20)
     
     #------------------------Entrada de texrto
     global entradatexto
@@ -303,21 +308,21 @@ def interfaztareas():
         cuadro_tarea.delete(position)
 
     #---------------------------ENTREYS
-    agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="black",font=("Source Code Pro",18),bg="#e0d8c3",border=0)
-    agregar_tarea.place(x=140,y=250,height=30,width=400)
+    agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="black",font=("Source Code Pro",20),bg="#e0d8c3",border=0)
+    agregar_tarea.place(x=140,y=550,height=30,width=400)
 
-    #---------------------------FRAME
-    Frame(ventana4,width=400,height=4,bg="#2a2a32").place(x=140,y=280)
+    #---------------------------FRAME 
+    Frame(ventana4,width=400,height=4,bg="#2a2a32").place(x=140,y=580)
     
-    #---------------------------OMG
+    #---------------------------IMG
     imgtarea=PhotoImage(file="agretarea.png")
     imgeliminar=PhotoImage(file="Eliminar.png")
     #---------------------------BOTONES
     Buttonagregar=Button(ventana4,image=imgtarea,bg="#e0d8c3",borderwidth=0,height=90,width=390,command=agrega)
     Buttoneliminar=Button(ventana4,image=imgeliminar,bg="#e0d8c3",borderwidth=0,height=90,width=390,command=eliminar)
-    #---------------------------PLCE
-    Buttonagregar.place(x=140,y=300)    
-    Buttoneliminar.place(x=140,y=380)
+    #---------------------------PLACE BOTONES----------------
+    Buttonagregar.place(x=140,y=650)    
+    Buttoneliminar.place(x=140,y=740)
 
     ventana4.mainloop()
 
