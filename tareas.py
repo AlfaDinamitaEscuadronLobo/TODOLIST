@@ -309,9 +309,14 @@ def interfaztareas():
 
     def agrega():
         cuadro_tarea.insert(END,entradatexto.get())
+        
 
-    agregar_tarea=Entry(ventana4,width=50,textvariable=entradatexto)
-    agregar_tarea.place(x=140,y=250)
+        
+
+    agregar_tarea=Entry(ventana4,textvariable=entradatexto,fg="green",font=("Source Code Pro",18),bg="#e0d8c3")
+    agregar_tarea.place(x=140,y=250,height=30,width=400)
+
+    Frame(ventana4,width=350,height=3,bg="black").place(x=150,y=260)
 
     Buttonagregar=Button(ventana4,text="agregar tarea",width=40,command=agrega)
     Buttonagregar.place(x=140,y=300)
